@@ -14,5 +14,24 @@ function initClient(){
         // Handle the initial sign-in state
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     });
-
+}
+function onSignIn(googleUser){
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId());
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail());
+}
+function handleAuthClick(event){
+    gapi.auth2.getAuthInstance().signIn();
+}
+function handleSignoutClick(event){
+    gapi.auth2.getAuthInstance().signOut();
+}
+function updateSigninStatus(isSignedIn){
+    if(isSignedIn){
+        listUpcomingEvents();
+    } else{
+        // Prompt user to sign in
+    }
 }
