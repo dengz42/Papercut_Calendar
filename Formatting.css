@@ -13,3 +13,10 @@ body{
     font-variation-settings:
       "wdth" 100;
 }
+.style1{
+    position: absolute;
+    vertical-align: top;
+    scale: 0.1;
+    top: 0px;
+    right: 0px;
+}
