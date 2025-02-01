@@ -4,7 +4,7 @@ function handleClientLoad(){
 function initClient(){
     gapi.client.init({
         apiKey: "AIzaSyBkE-rQQJ-uWpda7Ax3tulbcT18rz3FWqI",
-        clientId: "",
+        clientId: "760407733920-jp8qptmqeog83j3gi2206vft68uips1l.apps.googleusercontent.com",
         discoveryDocs: "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
         scope: "https://www.googleapis.com/auth/calendar.events",
     }).then(function (){
