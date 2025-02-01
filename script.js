@@ -17,7 +17,9 @@ function onSignIn(googleResponse) {
     const userInfo = parseJwt(credential);
     console.log('User Info:', userInfo);
 }
-
+function getClientId() {
+    return clientId;
+}
 // Function to parse JWT token and get user info
 function parseJwt(token) {
     const base64Url = token.split('.')[1];
