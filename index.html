@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
-    <script src = "https://apis.google.com/js/platform.js" async defer> </script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papercut Calendar</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
 <body>
     <h1>Papercut Calendar</h1>
     <p>I'm hosted with GitHub Pages.</p>
+    
+    <!-- Google Sign-In Button -->
+    <div id="g_id_onload" 
+        data-client_id="760407733920-jp8qptmqeog83j3gi2206vft68uips1l.apps.googleusercontent.com" 
+        data-callback="onSignIn">
+    </div>
+
+    <div class="g_id_signin" data-type="standard"></div>
+
     <script src="script.js"></script>
-    <div id="calendar"></div>
-    <div class = "g-signin2" data-onsuccess = "onSignIn"></div>
 </body>
 </html>
