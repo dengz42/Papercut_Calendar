@@ -1,3 +1,11 @@
+require('dotenv').config();
+
+const clientId = process.env.CLIENT_ID;
+const apiKey = process.env.API_KEY;
+
+console.log("Client ID:", clientId); // Test if variables are loaded
+console.log("API Key:", apiKey);    // Test if variables are loaded
+
 function onSignIn(googleResponse) {
     // The response contains the credential (ID token)
     const credential = googleResponse.credential;
@@ -20,3 +28,5 @@ function parseJwt(token) {
     
     return JSON.parse(jsonPayload);
 }
+
+
