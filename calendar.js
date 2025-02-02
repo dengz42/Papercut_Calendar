@@ -43,5 +43,11 @@ function parseSchedule(response) {
             });
         }
     }
+    //Example push
+    events.push({
+        summary: "GDSC Hackathon",
+        startTime: "2025-02-02T10:00:00",
+        endTime: "2025-02-02T17:00:00",
+    })
     return events;
 }
