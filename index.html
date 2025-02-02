@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papercut Calendar</title>
+    <h1>Papercut Calendar</h1>
     <!--CSS Styling -->
     <link rel="stylesheet" href="Formatting.css">
     <!--Google Sign in Script -->
@@ -11,8 +11,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <p>Papercut Calendar</p>
-    <image src = "Icon.jpg" class = "style1"></image>
+    <image id = "icon" src = "Icon.jpg"></image>
     <!-- Google Sign-In Button -->
     <div id="g_id_onload" 
         data-client_id= 760407733920-jp8qptmqeog83j3gi2206vft68uips1l.apps.googleusercontent.com
@@ -21,12 +20,17 @@
 
     <div class="g_id_signin" data-type="standard"></div>
     
-    <h1>Chat with Gemini</h1>
-    <input type="text" id="userInput" placeholder="Ask something...">
-    <button onclick="sendMessage()">Send</button>
-    <p id="response" style= "font-family: 'roboto', sans-serif"></p>
+    <div id= "aiPrompt">
+        <p style="font-weight: bold;">Generate your schedule here<p>
+        <input type="text" id="userInput" placeholder="How to you want to schedule your day?">
+        <button onclick="sendMessage()">Send</button>
+        <p id="response" style= "font-family: 'roboto', sans-serif"></p>
+    </div>
 </body>
-<a href="TermsOfService/index.html">Terms of Service</a>
-<br>
-<a href="PrivacyPolicy/index.html">Privacy Policy</a>
+<div id = "footer">
+    <a href="TermsOfService/index.html">Terms of Service</a>
+    <br>
+    <br>
+    <a href="PrivacyPolicy/index.html">Privacy Policy</a>
+</div>
 </html>
