@@ -20,7 +20,7 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 }
 
-const API_KEY = "AIzaSyBkE-rQQJ-uWpda7Ax3tulbcT18rz3FWqI"; 
+const API_KEY = "AIzaSyB42LKfP7LUtFzYozr1HJlPE4j0RA6AfwI"; 
 const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
 
 async function sendMessage() {
