@@ -23,30 +23,20 @@ function parseJwt(token) {
     
     return JSON.parse(jsonPayload);
 }
-document.getElementById("generateButton").addEventListener("click", sendMessage());
 
-async function sendMessage() {
-    const userInput = document.getElementById("userInput").value;
-    
+async function getGeminiResponse(prompt) {
     const requestBody = {
-        contents: [{ parts: [{ text: userInput }] }]
+        contents: [{ parts: [{ text: prompt }] }]
     };
 
-    try {
-        const response = await fetch(API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(requestBody)
-        });
+    const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(requestBody)
+    });
 
-        const data = await response.json();
-        document.getElementById("response").innerText = data.candidates[0].content.parts[0].text;
-        return data.candidates[0].content.parts[0].text;
-    } catch (error) {
-        console.error("Error:", error);
-        document.getElementById("response").innerText = "Error fetching response.";
-        return null;
-    }
+    const data = await response.json();
+    return data.candidates[0].content.parts[0].text; // Return the generated response
 }
 
 

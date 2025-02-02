@@ -12,7 +12,7 @@ async function generateAndCreateSchedule() {
 
     try {
         // Step 1: Get Gemini response based on the user's prompt
-        const geminiResponse = await getGeminiResponse(userPrompt);
+        const geminiResponse = await getGeminiResponse(userInput);
 
         // Step 2: Parse the response to extract events
         const events = parseSchedule(geminiResponse);
