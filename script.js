@@ -20,4 +20,29 @@ function parseJwt(token) {
     return JSON.parse(jsonPayload);
 }
 
+const API_KEY = "AIzaSyBkE-rQQJ-uWpda7Ax3tulbcT18rz3FWqI"; 
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
+
+async function sendMessage() {
+    const userInput = document.getElementById("userInput").value;
+    
+    const requestBody = {
+        contents: [{ parts: [{ text: userInput }] }]
+    };
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody)
+        });
+
+        const data = await response.json();
+        document.getElementById("response").innerText = data.candidates[0].content.parts[0].text;
+    } catch (error) {
+        console.error("Error:", error);
+        document.getElementById("response").innerText = "Error fetching response.";
+    }
+}
+
 
