@@ -39,7 +39,10 @@ button{
     background-color: rgb(105, 105, 105);
     color: white;
 }
-
+button:hover{
+    border-width: 5px;
+    border-color: rgb(255, 255, 255);
+}
 #aiPrompt{
     padding-top: 1%;
     font-family: 'roboto', sans-serif;
@@ -77,6 +80,9 @@ a:hover{
 }
 
 #response{
+    font-family: 'roboto', sans-serif;
+    text-indent: 5%;
+    font-weight: bold;
     height: 325px;
     width: 100%;
     margin-left: 0%;
@@ -85,7 +91,7 @@ a:hover{
     border-width: 5px;
     border-radius: 10px;
     text-align: left;
-    font-size: 12px;
+    font-size: 15px;
     overflow: auto;
 }
 

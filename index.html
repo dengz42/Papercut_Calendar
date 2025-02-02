@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="Formatting.css">
     <!--Google Sign in Script -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="script.js"></script>
+    <script src="gemini.js"></script>
+    <script src="calendar.js"></script>
+    <script src="generator.js"></script>
 </head>
 <body>
     <image id = "icon" src = "Icon.jpg"></image>
@@ -23,8 +25,8 @@
     <div id= "aiPrompt">
         <p style="font-weight: bold;">Generate your schedule here<p>
         <input type="text" id="userInput" placeholder="How to you want to schedule your day?">
-        <button onclick="sendMessage()">Send</button>
-        <p id="response" style= "font-family: 'roboto', sans-serif"></p>
+        <button id = "generateButton" onclick="generateAndCreateSchedule()">Send</button>
+        <p id="response"></p>
     </div>
 </body>
 <div id = "footer">

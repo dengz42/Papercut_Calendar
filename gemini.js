@@ -23,6 +23,7 @@ function parseJwt(token) {
     
     return JSON.parse(jsonPayload);
 }
+document.getElementById("generateButton").addEventListener("click", sendMessage());
 
 async function sendMessage() {
     const userInput = document.getElementById("userInput").value;
@@ -40,9 +41,11 @@ async function sendMessage() {
 
         const data = await response.json();
         document.getElementById("response").innerText = data.candidates[0].content.parts[0].text;
+        return data.candidates[0].content.parts[0].text;
     } catch (error) {
         console.error("Error:", error);
         document.getElementById("response").innerText = "Error fetching response.";
+        return null;
     }
 }
 
