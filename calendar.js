@@ -1,6 +1,6 @@
 // googleSchedule.js
 
-const API_KEY_CALENDAR = "AIzaSyBkE-rQQJ-uWpda7Ax3tulbcT18rz3FWqI"; // Replace with your Google Calendar API key
+const API_KEY_CALENDAR = "AIzaSyBkE-rQQJ-uWpda7Ax3tulbcT18rz3FWqI"; 
 const API_URL_CALENDAR = "https://www.googleapis.com/calendar/v3/calendars/primary/events?key=" + API_KEY_CALENDAR;
 
 async function createEvent(eventDetails) {
