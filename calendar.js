@@ -8,7 +8,7 @@ async function createEvent(eventDetails) {
         summary: eventDetails.summary,
         start: {
             dateTime: eventDetails.startTime,
-            timeZone: "Canada/Toronto", // Adjust to your timezone
+            timeZone: "Canada/Toronto",
         },
         end: {
             dateTime: eventDetails.endTime,
