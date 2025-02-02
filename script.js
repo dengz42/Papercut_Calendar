@@ -1,3 +1,7 @@
+// Icorporate Google genmini API to generate content
+const API_KEY = "AIzaSyB42LKfP7LUtFzYozr1HJlPE4j0RA6AfwI"; 
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
+
 function onSignIn(googleResponse) {
     // The response contains the credential (ID token)
     const credential = googleResponse.credential;
@@ -19,9 +23,6 @@ function parseJwt(token) {
     
     return JSON.parse(jsonPayload);
 }
-
-const API_KEY = "AIzaSyB42LKfP7LUtFzYozr1HJlPE4j0RA6AfwI"; 
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
 
 async function sendMessage() {
     const userInput = document.getElementById("userInput").value;
