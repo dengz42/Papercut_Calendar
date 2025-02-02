@@ -36,6 +36,7 @@ async function getGeminiResponse(prompt) {
     });
 
     const data = await response.json();
+    window.alert(data.candidates[0].content.parts[0].text);
     return data.candidates[0].content.parts[0].text; // Return the generated response
 }
 

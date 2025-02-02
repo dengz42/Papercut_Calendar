@@ -29,19 +29,19 @@ async function createEvent(eventDetails) {
 }
 
 function parseSchedule(response) {
-    // Example parsing logic (you may need to refine based on Gemini's response format)
     const events = [];
-
-    // Example: Parsing based on simple time range (this can be more complex)
-    if (response.includes("meeting")) {
-        events.push({
-            summary: "Meeting",
-            startTime: "2025-02-02T10:00:00", // Example start time
-            endTime: "2025-02-02T11:00:00",   // Example end time
-        });
+    const responseLines = response.split("\n");
+    for (i = 0; i < responseLines.length; i += 1) {
+        if (responseLines[i].includes("* ")) {
+            const eventDetails = responseLines[i].split(":")[1].trim();
+            const timeRange = responseLines[i + 1].split(":")[1].trim();
+            const [startTime, endTime] = timeRange.split(" - ");
+            events.push({
+                summary: eventDetails,
+                startTime: startTime,
+                endTime: endTime,
+            });
+        }
     }
-
-    // Add more events based on the Gemini response...
-
     return events;
 }
