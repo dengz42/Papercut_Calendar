@@ -33,7 +33,7 @@ function parseSchedule(response) {
     const responseLines = response.split("\n");
     for (i = 0; i < responseLines.length; i += 1) {
         if (responseLines[i].includes(":")) {
-            const eventDetails = responseLines[i].split(":")[1].trim();
+            const eventDetails = responseLines[i].split(":")[0].trim();
             const timeRange = responseLines[i].split(":")[1].trim();
             const [startTime, endTime] = timeRange.split(" - ");
             events.push({
